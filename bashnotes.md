@@ -22,8 +22,13 @@
 - Relative Path - file path starting with . that defines the relation to the current working 
 directory
 
-- .. - used to go back a directoryy
+- .. - used to go back a directory
 
 ## command
 - which git - path for executable
 - git init myrepo 
+
+## git Notes
+- git add <filename> - adds a file and changes to staging.
+- git commit - create a saved state
+	- -m "message" - add a professional commit message
