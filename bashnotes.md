@@ -26,9 +26,12 @@ directory
 
 ## command
 - which git - path for executable
-- git init myrepo 
+- git init - initialized a new local repository 
 
 ## git Notes
+- git status 
 - git add <filename> - adds a file and changes to staging.
 - git commit - create a saved state
 	- -m "message" - add a professional commit message
+- git log - git commit history
+
