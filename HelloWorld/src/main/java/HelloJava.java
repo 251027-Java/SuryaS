@@ -35,15 +35,12 @@ public class HelloJava {
 
          if, else if, else
          switch (with) case
-         for, while, do while
+         for, while, do while, for each
          execution handling: try catch
          */
 
          // pseudocode
-         switch(myBool){
-             case true -> myBool = false;
-             case false -> myBool = true;
-         }
+
          System.out.println("myBool is "+myBool);
     }
 }
