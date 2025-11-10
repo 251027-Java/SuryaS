@@ -1,0 +1,13 @@
+[Expense [id=1,date=Tue Nov 04 14:24:30 CST 2025,value=3.4,merchant=Jack], Expense [id=2,date=Tue Nov 04 13:52:49 CST 2025,value=3.0,merchant=Bobby], Expense [id=3,date=Tue Nov 04 13:52:49 CST 2025,value=1.0,merchant=Surya
+
+
+
+
+
+
+
+
+
+
+
+]]
