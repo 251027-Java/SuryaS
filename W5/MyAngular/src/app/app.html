@@ -1,0 +1,13 @@
+<!-- app.html is the main HTML file we'll use to render the view (what the user sees)
+ We can statically render stuff of depend on routing which is hwat router-outler is for. -->
+
+
+<h2>Hello Angular! I am a statically displayed paragraph element. I will never leave the page.</h2>
+<p style="border-bottom: 3px solid black;">Static display is good for stuff like navbars that we don't want to leave the page.</p>
+
+
+<app-parent-component></app-parent-component>
+
+<!-- need this to allow routing.
+  Routing is how we move components in and out of view. -->
+<router-outlet />
