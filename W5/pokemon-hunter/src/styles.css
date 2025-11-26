@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+    @font-face {
+        font-family: 'PokemonSolid'; /* Choose a name for your font */
+        src: url('/Pokemon.ttf') format('truetype'); /* Adjust the path and format as needed */
+        /* You can add more src lines for different formats (e.g., woff2, woff) for broader browser compatibility */
+        font-weight: normal;
+        font-style: normal;
+    }

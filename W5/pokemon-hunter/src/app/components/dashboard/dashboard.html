@@ -1,0 +1,12 @@
+    <div class="container-fluid">
+        <h1>Welcome, username</h1>
+        <h3 class="mt-3 border-bottom">You have {{this.pokemonService.caughtPokemon.length}}  <span style="font-family: 'PokemonSolid'; font-size: 2rem; ">pokemon</span></h3>
+
+        <div class="d-flex">
+            <div *ngFor="let pokemon of pokemonService.caughtPokemon">
+                <img src="{{pokemon.sprite}}" alt="">
+                <p>{{pokemon.name.replace(/-/g, ' ') | titlecase}}</p>
+            </div>
+        </div>
+    </div>
+

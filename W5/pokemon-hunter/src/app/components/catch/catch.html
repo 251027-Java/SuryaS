@@ -1,0 +1,13 @@
+    <div class="container-fluid">
+        <div>
+            <h3>Click a <span style="font-family: 'PokemonSolid'; font-size: 2rem; ">Pokemon</span> to catch it</h3>
+            <button class="btn btn-dark" (click)="getPokemon()">Reshuffle</button>
+        </div>
+
+        <div>
+            <img *ngIf="pokemon().id" src="{{pokemon().sprite}}" alt="" height="175" width="175" (click)="catchPokemon()">
+             <strong style="font-family: 'PokemonSolid'; font-size: 2rem; ">{{pokemon().name.replace(/-/g, ' ') | titlecase}}</strong>
+        </div>
+
+        
+    </div>
