@@ -20,7 +20,7 @@ export const routes: Routes = [
     canMatch: [authGuardGuard]
   },
   {
-    path: '***',
+    path: '**',
     redirectTo: ''
   }
 

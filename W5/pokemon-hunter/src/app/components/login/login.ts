@@ -20,6 +20,8 @@ export class Login {
 
   login(){
     if (this.username === "username" && this.password === "password"){
+      const token = this.authService.generateToken();
+      localStorage.setItem('JWT_token', token);
       this.authService.authenticateUser();
       this.router.navigateByUrl("/dashboard")
     }
