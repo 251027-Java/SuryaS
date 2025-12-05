@@ -31,7 +31,7 @@ public class ExpenseReportApplication {
     }
 
     @Bean
-    CommandLineRunner seedData (ExpenseRepository expenseRepository, ReportRepository reportRepository, AppUserRepository appUserRepository){
+    CommandLineRunner seedData (ExpenseRepository expenseRepository, ReportRepository reportRepository, AppUserRepository appUserRepository, PasswordEncoder encoder){
         return args -> {
 
             // expenses seed
@@ -50,8 +50,8 @@ public class ExpenseReportApplication {
 
             // AppUser Seed
 
-            appUserRepository.save(new AppUser("admin", "password123", "ADMIN"));
-            appUserRepository.save(new AppUser("user", "secret", "USER"));
+            appUserRepository.save(new AppUser("admin", encoder.encode("password123"), "ADMIN"));
+            appUserRepository.save(new AppUser("user", encoder.encode("secret"), "USER"));
         };
     }
 
