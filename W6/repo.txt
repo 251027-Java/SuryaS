@@ -1,0 +1,15 @@
+controller - http translate - dto
+service - business logic - classes
+repo - java-> data - DAO
+DB
+
+read from top to bottom
+
+
+
+
+Java  			   SQL
+Object/class	--> jdbc   table
+		 use orm instead
+		 orm is bidirectional
+		 uses jpa, java persistence api

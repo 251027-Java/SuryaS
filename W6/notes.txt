@@ -1,0 +1,3 @@
+Statelessness 
+data not persisted
+Login(username, password)
