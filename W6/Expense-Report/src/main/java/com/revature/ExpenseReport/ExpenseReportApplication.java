@@ -20,42 +20,42 @@ import java.util.List;
 @SpringBootApplication
 public class ExpenseReportApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(ExpenseReportApplication.class, args);
-	}
-    //just before user is ready for application
+    }
+    // just before user is ready for application
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    CommandLineRunner seedData (ExpenseRepository expenseRepository, ReportRepository reportRepository, AppUserRepository appUserRepository, PasswordEncoder encoder){
+    CommandLineRunner seedData(ExpenseRepository expenseRepository, ReportRepository reportRepository,
+            AppUserRepository appUserRepository, PasswordEncoder encoder) {
         return args -> {
+            if (reportRepository.count() == 0) {
+                // expenses seed
+                var r1 = new Report("Plano", "Draft");
+                var r2 = new Report("Reston", "Submitted");
+                reportRepository.save(r1);
+                reportRepository.save(r2);
 
-            // expenses seed
-            var r1 = new Report("Plano", "Draft");
-            var r2 = new Report("Reston", "Submitted");
-            reportRepository.save(r1);
-            reportRepository.save(r2);
-
-            var e1 = new Expense(LocalDate.now(), new BigDecimal(59.99), "Walmart");
-            e1.setReport(r1);
-            var e2 = new Expense(LocalDate.now().minusDays(1), new BigDecimal(14.75), "Starbucks");
-            e2.setReport(r1);
-            var e3 = new Expense(LocalDate.now().minusDays(2), new BigDecimal(99.88), "Buffalo Wild Wings");
-            e3.setReport(r2);
-            expenseRepository.saveAll(List.of(e1, e2, e3));
+                var e1 = new Expense(LocalDate.now(), new BigDecimal(59.99), "Walmart");
+                e1.setReport(r1);
+                var e2 = new Expense(LocalDate.now().minusDays(1), new BigDecimal(14.75), "Starbucks");
+                e2.setReport(r1);
+                var e3 = new Expense(LocalDate.now().minusDays(2), new BigDecimal(99.88), "Buffalo Wild Wings");
+                e3.setReport(r2);
+                expenseRepository.saveAll(List.of(e1, e2, e3));
+            }
 
             // AppUser Seed
-
-            appUserRepository.save(new AppUser("admin", encoder.encode("password123"), "ADMIN"));
-            appUserRepository.save(new AppUser("user", encoder.encode("secret"), "USER"));
-        };
+            if (appUserRepository.count() == 0) {
+                appUserRepository.save(new AppUser("admin", encoder.encode("password123"), "ADMIN"));
+                appUserRepository.save(new AppUser("user", encoder.encode("secret"), "USER"));
+            }
+            };
     }
-
-
-
 
 }
