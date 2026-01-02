@@ -1,0 +1,8 @@
+SPA ->API ->DB
+
+can split API , microservice architecture
+
+horizontal scaling:
+can duplicate one API
+
+4 GitHub classroom Monday
